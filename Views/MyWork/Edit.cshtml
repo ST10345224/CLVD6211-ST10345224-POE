@@ -1,0 +1,31 @@
+﻿@model KhumaloCraftPOE.Repository.EditProductViewModel // This view uses the EditProductViewModel
+@{
+    ViewData["Title"] = "Edit a Product";
+}
+
+<div class="text-center">
+    <h1 class="page-heading">Edit a Product</h1>
+</div>
+
+@if (Model != null) // Check if a product is selected
+{
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="ProductId" />
+
+        <div class="form-group">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Category">Category:</label>
+            <input asp-for="Category" class="form-control" />
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+}
+else
+{
+    <p>Please select a product to edit.</p>
+}

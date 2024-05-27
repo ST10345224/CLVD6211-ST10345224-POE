@@ -1,0 +1,43 @@
+﻿@model KhumaloCraftPOE.Models.Product  // Reference the Product model
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<div class="text-center">
+    <h1 class="page-heading">Create New Product</h1>
+</div>
+
+<div class="create-form">
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Category">Category:</label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Price:</label>
+        <input asp-for="Price" type="number" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="IsAvailable">Available:</label>
+    <input asp-for="IsAvailable" type="checkbox" class="form-check-input">
+</div>
+    <div class="form-group">
+        <label asp-for="ImageUrl">Image:</label>
+        <input name="image" type="file" class="form-control-file" />
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Create Product</button>
+</form>
+</div>

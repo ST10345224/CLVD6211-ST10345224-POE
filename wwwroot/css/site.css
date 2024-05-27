@@ -286,3 +286,115 @@ footer{
     border-radius: 10px;
     
 }
+
+/* For CRUD navbar */
+.crud-nav {
+    display: flex; /* Make the list items display horizontally */
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+
+}
+
+.crud-nav li {
+    margin-right: 40px; /* Add spacing between list items */
+}
+
+.crud-nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #eb5050; /* Set link text color */
+}
+
+.crud-nav a:hover { /* Style on hover */
+    color: #00ffff; /* Change link color on hover */
+}
+
+/* For Create */
+.create-form {
+  display: flex;
+  flex-wrap: wrap; /* Allow form elements to wrap if needed */
+  width: 100%; /* Make the form fill the available width */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.create-form .form-group {
+  width: 50%; /* Set width for each form group */
+  margin-bottom: 15px; /* Add spacing between groups */
+}
+
+.create-form label {
+  display: block; /* Make labels appear on separate lines */
+  margin-bottom: 5px; /* Add spacing between label and input */
+  font-weight: bold; /* Emphasize labels */
+}
+
+.create-form input[type="text"],
+.create-form input[type="number"],
+.create-form textarea {
+  width: 300%; /* Set width for input fields */
+  padding: 10px; /* Add padding for better readability */
+  border: 1px solid #ccc; /* Create a border around input fields */
+  border-radius: 3px; /* Add rounded corners */
+}
+
+.create-form .form-control-file {
+  width: 300%; /* Set width for file input */
+  padding: 10px; /* Add padding for better readability */
+}
+
+    .create-form button[type="submit"] {
+        width: 100%; /* Set width for submit button */
+        padding: 10px 20px; /* Add padding for submit button */
+        background-color: #333; /* Set button background color */
+        color: #fff; /* Set button text color */
+        border: none; /* Remove border from submit button */
+        border-radius: 3px; /* Add rounded corners */
+        cursor: pointer; /* Indicate clickable element */
+        font-family: "Josefin Sans", sans-serif;
+        text-transform: uppercase;
+    }
+
+.create-form button[type="submit"]:hover {
+  background-color: orangered; /* Change button color on hover */
+}
+
+/* For Login */
+.login-link {
+    display: block; /* Make the link appear on a separate line */
+    text-align: left; /* Center the link */
+    margin-top: 15px; /* Add spacing above the link */
+    color: #ff6a00;
+    font-weight: bold;
+}
+
+.table {
+    width: 50%; /* Adjust table width as needed */
+    border-collapse: collapse; /* Collapse table borders */
+  }
+
+  /* Table header styling */
+    .table thead th {
+        padding: 0.75rem 1.25rem; /* Adjust padding for headers */
+        text-align: left; /* Align header text to the left */
+        background-color: #333; /* Light background color */
+        border: 1px solid orangered; /* Subtle border for headers */
+    }
+
+    /* Table body styling */
+  .table tbody td {
+    padding: 0.5rem 1rem; /* Adjust padding for table cells */
+    border: 1px solid orangered; /* Border for table cells */
+  }
+
+  /* Link styling */
+  .table a {
+    color: #007bff; /* Adjust link color based on preference */
+    text-decoration: none; /* Remove underline from links */
+  }
+
+  .table a:hover {
+    text-decoration: underline; /* Add underline on hover for visual feedback */
+  }

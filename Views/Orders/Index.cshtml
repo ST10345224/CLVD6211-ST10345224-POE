@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KhumaloCraftPOE.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="page-heading">Order Summary</h1>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                
+                <a class="crud-nav" asp-action="Details" asp-route-id="@item.OrderId">Details</a>
+                
+            </td>
+            <td>
+                
+                <a class="crud-nav" asp-action="Delete" asp-route-id="@item.OrderId">Process Order</a>
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

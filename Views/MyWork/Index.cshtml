@@ -1,16 +1,52 @@
-﻿@{
+﻿@using KhumaloCraftPOE.Repository
+@using KhumaloCraftPOE.Models
+@model ProductsViewModel
+
+@{
     ViewData["Title"] = "My Work";
 }
 
 <div class="text-center">
     <h1 class="page-heading">My Work</h1>
+    <ul class="crud-nav">
+        <li><a href="MyWork/Create">Create New Product</a></li>
+        
+    </ul>
     <p>
-        Here you can find a collection of various artworks that were handcrafted by myself. Hover over a card to view more information and pricing for the items.</p>
+        Here you can find a collection of various artworks!</p>
 </div>
 
+
+
 <div class="gallery-container">
-<div class="gallery-item">
-    <img src="./Images/Vase.jpg" alt="Image Description">
+    @foreach (var product in Model.Products)
+    {
+        <div class="gallery-item">
+            <img src="@product.ImageUrl" alt="@product.Name" />
+            <div class="description">
+                <div class="item-title">
+                    @product.Name
+                </div>
+                <p class="item-desc">
+                    @product.Description
+                </p>
+                <p class="item-desc">
+                    Category: @product.Category
+                </p>
+                <p class="item-price">
+                    @product.Price.ToString("C")
+                </p>
+                <form asp-action="AddToOrder" asp-controller="MyWork" method="post">
+                    <input type="hidden" name ="ProductId" asp-for=@product.ProductId>
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+
+@* <div class="gallery-item">
+        <img src="./Images/ProductImages/Vase.jpg" alt="Image Description">
     <div class="description">
         <div class="item-title">
             Duality Vase
@@ -24,7 +60,7 @@
 </div>
 
 <div class="gallery-item">
-    <img src="./Images/ModernGlassTable.webp" alt="Image Description">
+        <img src="./Images/ProductImages/ModernGlassTable.webp" alt="Image Description">
     <div class="description">
         <div class="item-title">
             Modern Chic Glass Table
@@ -38,7 +74,7 @@
 </div>
 
 <div class="gallery-item">
-    <img src="./Images/GoldDND.webp" alt="Image Description">
+        <img src="./Images/ProductImages/GoldDND.webp" alt="Image Description">
     <div class="description">
         <div class="item-title">
             Gilded Glory D&D Dice Set
@@ -52,7 +88,7 @@
 </div>
 
 <div class="gallery-item">
-    <img src="./Images/Resin table.jpg" alt="Image Description">
+        <img src="./Images/ProductImages/Resin table.jpg" alt="Image Description">
     <div class="description">
         <div class="item-title">
             Nature's Nexus Wood Resin Table
@@ -63,6 +99,6 @@
         </p>
         <p class="item-price">ZAR 45,000</p>
     </div>
-</div>
-</div>
+</div> *@
+@* </div> *@
 

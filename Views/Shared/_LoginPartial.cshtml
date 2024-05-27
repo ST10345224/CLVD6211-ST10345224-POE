@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using KhumaloCraftPOE.Areas.Identity.Data
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+<head>
+    <link rel="stylesheet" href="~/font-awesome/css/font-awesome.min.css">
+</head>
+
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a id="manage" class="nav-link" asp-area="Identity" >
+                
+                <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+            <span class="link-text">Welcome @UserManager.GetUserName(User)!</span>
+         </a>
+    </li>
+    <li class="nav-item">
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+        
+                <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                <span class="link-text">Logout</span>
+        
+        </a>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">
+            <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+                <span class="link-text">Register</span>
+            </a>
+    </li>
+    <li class="nav-item">
+            
+        <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">
+            <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+                <span class="link-text">Login</span>
+            </a>
+    </li>
+}
+</ul>
+
+
+@* <li class="nav-item">
+    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+        <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+
+        <span class="link-text">Logout</span>
+    </a>
+</li> *@
+
+            @* asp-page="/Account/Manage/Index" title="Manage" *@

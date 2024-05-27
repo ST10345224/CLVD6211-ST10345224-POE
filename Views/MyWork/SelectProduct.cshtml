@@ -1,0 +1,24 @@
+﻿@model KhumaloCraftPOE.Models.Product  // Reference the Product model
+@{
+    ViewData["Title"] = "Edit a Product";
+}
+
+<div class="text-center">
+    <h1 class="page-heading">Edit a Product</h1>
+</div>
+
+<h1>Edit Product</h1>
+
+<form asp-action="EditPrompt" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="productId">Select Product to Edit:</label>
+        <select asp-for="ProductId" class="form-control" id="productId" onchange="submit()">
+            <option value="">-- Select Product --</option>  @foreach (var product in ViewData["products"] as List<Product>)
+            {
+                <option value="@product.ProductId">@product.Name</option>
+            }
+        </select>
+        <span asp-validation-for="ProductId" class="text-danger"></span>
+    </div>
+
+</form>
