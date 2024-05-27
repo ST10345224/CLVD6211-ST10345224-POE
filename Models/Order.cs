@@ -16,6 +16,12 @@ namespace KhumaloCraftPOE.Models
 
         public string Status { get; set; } // Optional: Order Status
 
+        public decimal Cost { get; set; } // Optional: Total Cost of Order
+
+        public int Quantity { get; set; } // Optional: Total Quantity of Order
+
+        public string ProductName { get; set; } // Optional: Product Name
+
         public ICollection<OrderItem> OrderItems { get; set; } // Navigation Property for OrderItems
     }
 }

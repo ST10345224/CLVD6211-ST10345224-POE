@@ -371,7 +371,7 @@ footer{
 }
 
 .table {
-    width: 50%; /* Adjust table width as needed */
+    width: 70%; /* Adjust table width as needed */
     border-collapse: collapse; /* Collapse table borders */
   }
 
@@ -398,3 +398,63 @@ footer{
   .table a:hover {
     text-decoration: underline; /* Add underline on hover for visual feedback */
   }
+
+.register-create-form {
+    display: flex;
+    flex-wrap: wrap; /* Allow form elements to wrap if needed */
+    width: 100%; /* Make the form fill the available width */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.register-create-form .form-group {
+    width: 50%; /* Set width for each form group */
+    margin-bottom: 15px; /* Add spacing between groups */
+}
+
+.register-create-form label {
+    display: block; /* Make labels appear on separate lines */
+    margin-bottom: 20px; /* Add spacing between label and input */
+    font-weight: bold; /* Emphasize labels */
+}
+
+.register-create-form input[type="text"],
+.register-create-form input[type="email"],
+.register-create-form input[type="password"] {
+    width: 200%; /* Set width for input fields */
+    padding: 10px; /* Add padding for better readability */
+    border: 1px solid #ccc; /* Create a border around input fields */
+    border-radius: 3px; /* Add rounded corners */
+}
+
+.register-create-form .form-control-file {
+    width: 300%; /* Set width for file input */
+    padding: 10px; /* Add padding for better readability */
+}
+
+.register-create-form button[type="submit"] {
+    width: 100%; /* Set width for submit button */
+    padding: 10px 20px; /* Add padding for submit button */
+    background-color: #333; /* Set button background color */
+    color: #fff; /* Set button text color */
+    border: none; /* Remove border from submit button */
+    border-radius: 3px; /* Add rounded corners */
+    cursor: pointer; /* Indicate clickable element */
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+}
+
+    .register-create-form button[type="submit"]:hover {
+        background-color: orangered; /* Change button color on hover */
+    }
+
+
+.order-crud-nav {
+    display: inline-block; /* Make the list items display horizontally */
+    list-style: none; /* Remove default bullet points */
+    padding: 0px; /* Remove default padding */
+    margin-bottom: 50px; /* Remove default margin */
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    line-height: 2.0;
+}

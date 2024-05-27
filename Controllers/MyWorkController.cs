@@ -133,7 +133,7 @@ namespace KhumaloCraftPOE.Controllers
             // Create new order if user doesn't have one
             if (openOrder == null)
             {
-                openOrder = new Order { UserId = userId, CreatedAt = DateTime.Now, Status = "Pending", OrderItems = new List<OrderItem>() }; // Assuming UserId property in Order
+                openOrder = new Order { UserId = userId, CreatedAt = DateTime.Now, Status = "Pending", OrderItems = new List<OrderItem>(), Cost = product.Price, Quantity =1, ProductName = product.Name }; // Assuming UserId property in Order
                 _orderRepository.Add(openOrder);
                 _orderRepository.Save();
             }
